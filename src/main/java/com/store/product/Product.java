@@ -1,7 +1,17 @@
 package com.store.product;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "product")
 public class Product {
 
+
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private  String name;
     private String brand;
     private int stock;
@@ -15,6 +25,13 @@ public class Product {
         this.brand = brand;
         this.stock = stock;
         this.price = price;
+    }
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
