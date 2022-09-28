@@ -3,6 +3,7 @@ package com.store;
 import com.store.product.Product;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import java.util.List;
 import java.util.Random;
@@ -12,6 +13,8 @@ public class StoreApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(StoreApplication.class, args);
+
+
 
 		boolean client=false;
 		boolean provider=false;
