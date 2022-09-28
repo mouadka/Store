@@ -35,8 +35,13 @@ public class ProductController {
     public void updateProduct(@PathVariable("productId") Long productId,
                               @RequestParam(required = false) String name,
                               @RequestParam(required = false)String brand,
-                              @RequestParam(required = false) int stock,
+                              @RequestParam(required = false) Integer stock,
                               @RequestParam(required = false) Double price){
         productService.updateProduct(productId, name, brand, stock, price);
     }
+//    @RequestMapping(value="/{productId}", method = RequestMethod.PUT)
+//    public void updateProduct(@RequestBody Product product,@PathVariable Long productId){
+//        productService.updateProduct(productId, product);
+
+    //}
 }

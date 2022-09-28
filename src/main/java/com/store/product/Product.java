@@ -14,13 +14,13 @@ public class Product {
     private Long id;
     private  String name;
     private String brand;
-    private int stock;
+    private Integer stock;
     private double price;
 
     public Product() {
     }
 
-    public Product(String name, String brand, int stock, double price) {
+    public Product(String name, String brand, Integer stock, double price) {
         this.name = name;
         this.brand = brand;
         this.stock = stock;
@@ -50,7 +50,7 @@ public class Product {
         this.brand = brand;
     }
 
-    public int getStock() {
+    public Integer getStock() {
         return stock;
     }
 

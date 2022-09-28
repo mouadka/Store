@@ -31,11 +31,20 @@ public class ProductService {
         }
         productRepository.deleteById(productId);
     }
+
+//    public void updateProduct( Long productId, Product product){
+//        for(int i = 0; i < getProducts().size(); i++){
+//            Product p = getProducts().get(i);
+//            if(p.getId().equals(productId)){
+//                getProducts().set(i,product);
+//            }
+//        }
+//    }
     @Transactional
     public void updateProduct(Long productId,
                               String name,
                               String brand,
-                              int stock,
+                              Integer stock,
                               Double price){
         Product product = productRepository.findById(productId)
                 .orElseThrow(()-> new IllegalStateException("Not Found"));
@@ -45,10 +54,10 @@ public class ProductService {
         if(brand != null && !Objects.equals(product.getBrand(),brand)) {
             product.setBrand(brand);
         }
-        if(stock != product.getStock()) {
+       if(stock != null && stock != product.getStock()) {
             product.setStock(stock);
         }
-        if(price != 0 && price != product.getPrice()){
+        if(price != null && price != product.getPrice()){
             product.setPrice(price);
         }
 
