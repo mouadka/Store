@@ -3,7 +3,6 @@ package com.store.product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.nio.file.Path;
 import java.util.List;
 
 @RestController
@@ -35,9 +34,8 @@ public class ProductController {
     public void updateProduct(@PathVariable("productId") Long productId,
                               @RequestParam(required = false) String name,
                               @RequestParam(required = false)String brand,
-                              @RequestParam(required = false) Integer stock,
                               @RequestParam(required = false) Double price){
-        productService.updateProduct(productId, name, brand, stock, price);
+        productService.updateProduct(productId, name, brand, price);
     }
 //    @RequestMapping(value="/{productId}", method = RequestMethod.PUT)
 //    public void updateProduct(@RequestBody Product product,@PathVariable Long productId){

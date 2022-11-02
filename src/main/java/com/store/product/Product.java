@@ -1,6 +1,11 @@
 package com.store.product;
 
+import com.store.provider.Provider;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "product")
@@ -14,16 +19,18 @@ public class Product {
     private Long id;
     private  String name;
     private String brand;
-    private Integer stock;
     private double price;
+//    @ManyToOne
+//    private Provider provider;
 
     public Product() {
     }
 
-    public Product(String name, String brand, Integer stock, double price) {
+
+
+    public Product(String name, String brand, double price) {
         this.name = name;
         this.brand = brand;
-        this.stock = stock;
         this.price = price;
     }
     public Long getId() {
@@ -50,13 +57,6 @@ public class Product {
         this.brand = brand;
     }
 
-    public Integer getStock() {
-        return stock;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
-    }
 
     public double getPrice() {
         return price;
@@ -66,12 +66,20 @@ public class Product {
         this.price = price;
     }
 
+//    public Provider getProvider() {
+//        return provider;
+//    }
+//
+//    public void setProvider(Provider provider) {
+//        this.provider = provider;
+//    }
+
     @Override
     public String toString() {
         return "Product{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", brand='" + brand + '\'' +
-                ", stock=" + stock +
                 ", price=" + price +
                 '}';
     }
