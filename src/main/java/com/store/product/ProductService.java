@@ -1,5 +1,7 @@
 package com.store.product;
 
+import com.store.provider.Provider;
+import com.store.provider.ProviderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +14,11 @@ public class ProductService {
 
     @Autowired
     public final ProductRepository productRepository;
+//    @Autowired
+//    public final ProviderRepository providerRepository;
 
     public ProductService(ProductRepository productRepository) {
+//        this.providerRepository = providerRepository;
         this.productRepository = productRepository;
     }
 
@@ -22,6 +27,10 @@ public class ProductService {
     }
 
     public void addNewProduct(Product product){
+//        Long providerId = product.getProvider().getId();
+//        Provider provider = providerRepository.getReferenceById(providerId);
+//        System.out.println(provider);
+//        product.setProvider(provider);
         productRepository.save(product);
     }
     public void deleteProduct(Long productId){
